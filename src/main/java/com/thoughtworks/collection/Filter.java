@@ -24,8 +24,8 @@ public class Filter {
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        //return firstList.stream().filter(item -> secondList.stream().anyMatch(item)).collect(Collectors.toList());
-        return null;
+        return firstList.stream().filter(item -> !secondList.stream().findAny().equals(0)).collect(Collectors.toList());
+        //return null;
     }
 
     public List<Integer> getDifferentElements() {
