@@ -5,16 +5,21 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
-        int start = leftBorder < rightBorder ? leftBorder : rightBorder;
+        /*int start = leftBorder < rightBorder ? leftBorder : rightBorder;
         int end = leftBorder < rightBorder ? rightBorder : leftBorder;
         int sum = 0;
         for(int i = start; i <= end; i++) {
             sum += i % 2 == 0 ? i : 0;
         }
-        return sum;
+        return sum;*/
+
+        return IntStream.rangeClosed(Math.min(leftBorder,rightBorder), Math.max(leftBorder,rightBorder))
+                .filter(item -> item % 2 == 0)
+                .reduce(0,(sum, item) -> sum += item);
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
