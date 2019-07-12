@@ -61,6 +61,7 @@ public class FilterTest {
         Filter filter = new Filter(arrayList);
 
         Integer[] result = new Integer[]{6, 2, 3, 9};
+
         List<Integer> resultList = Arrays.asList(result);
 
         assertThat(filter.getCommonElements(arrayList, arrayList1)).isEqualTo(resultList);

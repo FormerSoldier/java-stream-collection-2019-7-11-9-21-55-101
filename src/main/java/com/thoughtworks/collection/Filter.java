@@ -24,13 +24,7 @@ public class Filter {
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        return firstList.stream().filter(item -> {
-            boolean isExist = false;
-            for(Integer integer : secondList)
-                if(integer == item)
-                    isExist = true;
-            return isExist;
-        }).collect(Collectors.toList());
+        return firstList.stream().filter( item -> secondList.contains(item)).collect(Collectors.toList());
     }
 
     public List<Integer> getDifferentElements() {
