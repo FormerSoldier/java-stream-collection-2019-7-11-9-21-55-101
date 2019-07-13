@@ -32,11 +32,7 @@ public class MyMap {
     }
 
     public List<Integer> sortFromBig() {
-        return array.stream().sorted(new Comparator<Integer>() {
-            public int compare(Integer o1, Integer o2) {
-                return o2 - o1;
-            }
-        }).collect(Collectors.toList());
+        return array.stream().sorted((o1, o2) -> o2 - o1).collect(Collectors.toList());
     }
 
     public List<Integer> sortFromSmall() {

@@ -23,7 +23,8 @@ public class Add {
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+        return IntStream.rangeClosed(Math.min(leftBorder, rightBorder),Math.max(leftBorder,rightBorder))
+                .filter(item -> item % 2 == 1).reduce(0,(sum, item) -> sum += item);
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
